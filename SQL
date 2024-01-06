@@ -1,0 +1,30 @@
+/* Looking at Total Cases vs Total Deaths */
+
+SELECT
+	location,
+	date,
+	total_cases,
+	total_deaths,
+	round((total_deaths/total_cases) * 100,2) as DeathPercentage
+FROM CovidDeath
+ORDER by 1,2;
+
+
+
+
+
+/* Looking at Total Cases vs Population in Thailand */
+
+SELECT
+	location,
+	date,
+	total_cases,
+	population,
+	round((total_cases/population) * 100,2) CasePercentage
+FROM CovidDeath
+WHERE location like '%hailan%'
+ORDER by 2;
+
+
+
+
